@@ -1,17 +1,13 @@
 package main
 
 import (
-	"log"
+	"fmt"
 
-	"github.com/netgusto/poly2tri"
+	"github.com/netgusto/poly2tri-go"
 )
 
 func main() {
 	contour := []*poly2tri.Point{
-		// poly2tri.NewPoint(100, 100),
-		// poly2tri.NewPoint(100, 300),
-		// poly2tri.NewPoint(300, 300),
-		// poly2tri.NewPoint(300, 100),
 		poly2tri.NewPoint(280.35714, 648.79075),
 		poly2tri.NewPoint(286.78571, 662.8979),
 		poly2tri.NewPoint(263.28607, 661.17871),
@@ -128,5 +124,5 @@ func main() {
 	swctx.Triangulate()
 	triangles := swctx.GetTriangles()
 
-	log.Println("hello", triangles)
+	fmt.Println(triangles)
 }
