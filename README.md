@@ -10,9 +10,8 @@ Usage example : (triangulation of "Dude with 2 holes", taken from here: http://r
 package main
 
 import (
-	"log"
-
-	"github.com/netgusto/poly2tri"
+	"fmt"
+	"github.com/netgusto/poly2tri-go"
 )
 
 func main() {
