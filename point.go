@@ -122,3 +122,9 @@ func PointEquals(a, b *Point) bool {
 func PointDot(a, b XYInterface) float64 {
 	return a.GetX()*b.GetX() + a.GetY()*b.GetY()
 }
+
+type SortablePointsCollection []*Point
+
+func (c SortablePointsCollection) Len() int           { return len(c) }
+func (c SortablePointsCollection) Swap(i, j int)      { c[i], c[j] = c[j], c[i] }
+func (c SortablePointsCollection) Less(i, j int) bool { return XYCompare(c[i], c[j]) < 0 }

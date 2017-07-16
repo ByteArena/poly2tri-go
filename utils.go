@@ -1,6 +1,8 @@
 package poly2tri
 
-import "math"
+import (
+	"math"
+)
 
 var EPSILON = 0.00001
 
@@ -11,6 +13,7 @@ var Orientation = map[string]int{
 }
 
 func Orient2d(pa, pb, pc *Point) int {
+
 	detleft := (pa.X - pc.X) * (pb.Y - pc.Y)
 	detright := (pa.Y - pc.Y) * (pb.X - pc.X)
 

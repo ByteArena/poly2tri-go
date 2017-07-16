@@ -1,6 +1,8 @@
 package poly2tri
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Triangle struct {
 	Points          []*Point
@@ -105,40 +107,37 @@ func (t *Triangle) ClearDelaunayEdges() {
 }
 
 func (t *Triangle) PointCW(p *Point) *Point {
-	points := t.Points
-
 	// Here we are comparing point references, not values
 
-	if p == points[0] {
-		return points[2]
+	if p == t.Points[0] {
+		return t.Points[2]
 	}
 
-	if p == points[1] {
-		return points[0]
+	if p == t.Points[1] {
+		return t.Points[0]
 	}
 
-	if p == points[2] {
-		return points[1]
+	if p == t.Points[2] {
+		return t.Points[1]
 	}
 
 	return nil
 }
 
 func (t *Triangle) PointCCW(p *Point) *Point {
-	points := t.Points
 
 	// Here we are comparing point references, not values
 
-	if p == points[0] {
-		return points[1]
+	if p == t.Points[0] {
+		return t.Points[1]
 	}
 
-	if p == points[1] {
-		return points[2]
+	if p == t.Points[1] {
+		return t.Points[2]
 	}
 
-	if p == points[2] {
-		return points[0]
+	if p == t.Points[2] {
+		return t.Points[0]
 	}
 
 	return nil
